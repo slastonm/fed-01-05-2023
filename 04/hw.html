@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1
+        for (let i = 10; i>0; i--){
+            console.log(i);
+        }
+        //2
+        let dobleArr = [];
+        let arrConstructor = new Array(10);
+        console.log(arrConstructor);
+        for (let i = 0; i < 8; i++){
+            if(i%2 === 0){
+                // dobleArr.push(i);
+                dobleArr[i] = i;
+            }
+        }
+    
+        console.log(dobleArr);
+
+        //3
+
+        let days = ["Понеділок", "Середа", "Неділя"] ;
+        let plans = ["Урок 03", "Урок 04", "Вихідни"];
+
+        for(let i=0; i<days.length; i++){
+            console.log(`Сьогодні ${days[i]}  у вас такі плани ${plans[i]}`);
+        }
+        // 4
+        // Вибрати  з массива 5 перших значень та вивести їх в консоль 
+        let numbers = [79, 9, 88, 57, 89, 42, 86, 88, 37, 14]
+        console.log(numbers.slice(0,5));
+        let numbersArr = [];
+        for(let j=0; j<5; j++){
+            numbersArr.push(numbers[j]);
+        }
+        console.log(numbersArr, 'second variants');
+
+        //Написати цикл який замінює відємне значення в масиві на 0 
+        let checkArr = [69, 96, -66, 77, 85, -85, 14, -20, 90, -36];
+        for(let j=0; j<checkArr.length; j++){
+            if(checkArr[j]<0){
+                checkArr[j] = 0;
+            }
+        }
+        console.log(checkArr);
+
+    </script>
+    <script src="moreArrayMethod.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
