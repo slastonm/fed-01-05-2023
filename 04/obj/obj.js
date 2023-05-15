@@ -56,3 +56,5 @@ for(let i =0; i < animals.length; i++) {
     console.log(`Obj nickname: ${animals[i].nickName} `);
 }
 
+
+

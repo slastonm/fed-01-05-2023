@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW</title>
+    <script>
+        let choseArr =['cat', 'cow', 'fish', 'chicken', 'dog', 'pig'];
+        // 1) створити функцію яка отримує аргумент і массив, якщо його значення 'last' то функція повертає останній елемент 'first' то повертає перший елемент массиву 
+        function chose(value, arr){
+            if(value === 'last'){
+                return arr[arr.length - 1];
+            }
+            else{
+                return arr[0];
+            }
+        }
+        // console.log(chose('last', choseArr));
+        // console.log(chose('first', choseArr));
+
+        let smile = [':)', '=)',':)', '=)',':)', '=)']; 
+        //Створити функцію яка отримує аргументом новий самйл і змінює  в масиві '':)' на новий смайл
+
+        function changeSmile(newSmile){
+            for(let i=0; i<smile.length; i++){
+                if(':)'===smile[i]){
+                    smile[i] = newSmile;
+                }
+            }
+        }
+
+        changeSmile('^_^');
+        console.log(smile);
+
+        //4) Створити функцію яка заповнює глобальну змінну непарними числами, а потім сортує їх в порядку зростання.
+        let arrValue = [];
+
+        function numberGenerator(){
+            for(let i =0; i<6; i++){
+                if(i%2 === 0){
+                    arrValue.push(i);
+                }
+            }
+            console.log(arrValue);
+            arrValue.sort((a,b)=>{return b-a});
+        }
+
+        numberGenerator();
+        console.log(arrValue);
+
+
+        //5) Створити функцію яка отримує массив з списком покупок (будь-які стрінг значення)  а також отримує колбек функію яка отримує як аргумент стрінг  і в консоль лог  повертає "Вам треба купити ..."
+
+        function notify(str){
+            return `Вам треба купити ${str}`;
+        }
+
+        function buyListCall(arr, callBack){
+            for(let i = 0; i < arr.length; i++){
+                console.log(callBack(arr[i]));
+                
+            }
+        }
+        buyListCall(choseArr, notify);
+
+
+        let multiArr = [
+            [1,2,3],
+            [4,5,6]
+        ];
+        for(let i = 0; i < multiArr.length; i++){
+            console.log('Create tr html');
+            for(let j = 0; j <multiArr[i].length; j++){
+                console.log(`td ${multiArr[i][j]}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
