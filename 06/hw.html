@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1 
+//         Домашня робота:
+// 1) Отримати від користувача значення name  вивести в консоль, першу і другу літеру  в верхньому регістрі. Якщо імя користувача довше 3 символів, то ще вивсести перші 3 літери + ... 
+// 2) Створити функцію конструкток CarFabric   яка створює обєкт з на такими даними, рікВипуску, модель,  максимальна швидкість
+// 3) На прототипі конструктора зробіть функцію carInfo яка вираховує вік машини використовуючи new Date
+        let userName = prompt('Enter your nae');
+        console.log(userName.substring(0,2).toUpperCase());
+        if(userName.length > 3){
+            // let shortName = userName.substring(0,3);
+            // console.log(`${shortName.toUpperCase()}...`);
+            let shortName = userName.substring(0,2);
+            let thirdLetter = userName.substring(2, 3);
+            console.log(`${shortName.toUpperCase()}${thirdLetter}...`);
+        }
+        else{
+            console.log(userName);
+        }
+
+        function CarFabric(year, model, speed){
+            this.year = year;
+            this.model = model;
+            this.speed = speed;
+        }
+        CarFabric.prototype.carInfo = function(){
+            let currentYear = new Date().getFullYear();
+            console.log(`This car age ${currentYear - this.year}`);
+        }
+        let ford = new CarFabric(2000, 'X', '200 km/h');
+        ford.carInfo();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
