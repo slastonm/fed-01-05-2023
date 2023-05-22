@@ -23,7 +23,7 @@ console.log(typeof sym, 'type of symbol');
 
 console.log(typeof NaN, 'type of NaN'); 
 
-
+let arr = ['1', 23, {a: 1}, true, NaN, false, null]
 
 
 
