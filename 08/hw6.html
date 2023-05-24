@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = ['1', 23, {a: 1}, true, NaN, false, null];
+        function filterData(data){
+            return data.filter(item =>typeof item === 'boolean');
+        }
+        let newArr = filterData(arr);
+        console.log(newArr);
+
+        class Product{
+            constructor(name, price, quantity){
+                this.name = name;
+                this.price = price;
+                this.quantity = quantity;
+            }
+            totalPrice(){
+                return this.price*this.quantity;
+            }
+            toString(){
+                return `Ім’я: ${this.name}, Ціна: ${this.price}, Кількість: ${this.quantity}`;
+            }
+        }
+        let productLaptop = new Product('Hoyтбук', '30000', 10);
+        console.log(productLaptop);
+        console.log(productLaptop.toString());
+        console.log(productLaptop.totalPrice());
+
+        const people = [
+            { name: 'John', age: 25 },
+            { name: 'Jane', age: 30 },
+            { name: 'Tom', age: 20 }
+        ];
+
+        function printNames(arr){
+            for(const {name} of people){
+                console.log(name);
+            }
+        }
+        printNames(people);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

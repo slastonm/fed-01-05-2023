@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="stylejs.js"></script>
+    <style>
+        h2{
+            background: #333;
+            margin: 50px;
+        }
+        .vertical{
+            background-color: yellow;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        .vertical.show{
+            display: flex;
+        }
+        .vertical.disabled{
+            display: flex;
+            cursor: not-allowed;
+            opacity: 0.5;
+            background-color: gray;
+        }
+        .box{
+            background-color: violet;
+            width: 400px;
+            height: 100px;
+            padding: 50px;
+            color: white;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Hello
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsam voluptate autem tenetur tempore eius doloribus beatae placeat ad voluptates debitis facilis, maiores, incidunt expedita consectetur. Ex harum deserunt et!
+    </p>
+    <h2>
+        Content
+    </h2>
+    <ul id="menu" class="vertical">
+        <li>Home</li>
+    </ul>
+    <button>
+        Menu
+    </button>
+    <div class="box">
+        Content
+    </div>
+    
+</body>
+</html>

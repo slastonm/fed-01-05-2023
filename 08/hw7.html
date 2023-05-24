@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let header = document.querySelector('header');
+            let ul = document.querySelector('ul');
+            let footer = document.querySelector('footer');
+
+            // header.setAttribute('style', 'border: 1px solid red;');
+            let elements = [header, footer, ul];
+            elements.forEach(function(item){ 
+                item.setAttribute('style', 'border: 1px solid red');
+            });
+
+            let thirdEl = document.querySelector('ul li:nth-child(3)');
+            thirdEl.setAttribute('style', 'color: yellow;');
+
+            thirdEl.setAttribute('class', 'active');
+            function nextElFn(){
+                let el = document.querySelector('.active');
+                let nextEl = el.nextElementSibling;
+                if (nextEl != null){
+                    nextEl.setAttribute('style', 'color:red; background-color:black;');
+                }
+            }
+            nextElFn();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        Header
+    </header>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <footer>
+        Footer content
+    </footer>
+</body>
+</html>
