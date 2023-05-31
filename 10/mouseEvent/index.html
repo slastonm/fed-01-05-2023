@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                .mouse{
+            background-color: green;
+            height: 250px;
+            width: 250px;
+        }
+        .hover{
+            height: 250px;
+            width: 250px;
+            border:1px solid red;
+        }
+        .cordinatblock{
+            display: flex;
+            justify-content: space-between;
+            width: 1000px;
+            height: 300px;
+            margin: 50px auto;
+        }
+        .cordinatblock>div{
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+        }
+        .output{
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+    <script src="mouse.js"></script>
+</head>
+<body>
+
+    <div class="hover"></div>
+    <div class="cordinatblock">
+        <div class="onmousedown"></div>
+        <div class="onmousemove"></div>
+        <div class="onmouseup"></div>
+    </div>
+    <div class="mouse"></div>
+    <p class="output"></p>
+</body>
+</html>

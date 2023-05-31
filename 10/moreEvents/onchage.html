@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let form = document.querySelector('form');
+            console.log(form);
+            let [...inputs] = form.elements;
+            console.log(inputs);
+            let output = document.querySelector('h1');
+            // for(let i = 0; i < inputs.length; i++) {
+            //     inputs[i].addEventListener('change', function(){
+            //         output.innerHTML = `Change data in ${this.name}`;
+            //     })
+            // }
+            form.onchange = function() {
+                output.innerHTML = `Change data in form elemnt`;
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1>
+
+    </h1>
+    <form action="">
+        <p>
+            <input placeholder="Name" type="text" name="User-name">
+        </p>
+        <p>
+            <input placeholder="password" type="password" name="User-password">
+        </p>
+        <p>
+            <input placeholder="Age" type="number" name="age">
+        </p>
+        
+    </form>
+</body>
+</html>

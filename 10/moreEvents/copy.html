@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let textEl = document.querySelector('p');
+            textEl.addEventListener('copy', function(e){
+                alert('Копіювання заборонено');
+                e.preventDefault();
+            });
+            let overlayEl = document.querySelector('.overlay');
+            let infoBlock = document.querySelector('.info');
+            let btn = document.querySelector('button');
+            btn.addEventListener('click', function(){
+                overlayEl.style.display = 'block';
+                infoBlock.style.display = 'block';
+            });
+
+        };
+    </script>
+    <style>
+        .overlay{
+            background-color: rgba(0, 0, 0, 0.584);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            z-index: 100;
+            display: none;
+        }
+        .info { 
+            position: absolute;
+            z-index: 101;
+            padding: 50px;
+            background-color: white;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="info">
+        Info block
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo voluptates pariatur nam, voluptas cupiditate explicabo laboriosam fugiat saepe mollitia eaque, quo aperiam fuga hic voluptate quas reprehenderit excepturi cumque.
+    </p>
+    <button>
+        Show info block
+    </button>
+</body>
+</html>

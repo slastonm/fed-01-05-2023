@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let output = document.querySelector('h1');
+            let form = document.querySelector('form');
+            let [...inputs] = form.elements;
+            let data =[];
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].addEventListener('blur', function() {
+                    this.style.border = '2px solid green';
+                });
+                inputs[i].addEventListener('focus', function() {
+                    this.style.border = '2px solid lightblue';
+                });
+                inputs[i].addEventListener('input', function() {
+                    output.innerHTML = this.value;
+                    console.log(typeof this.value);
+                    data.push(this.value);
+                    console.log(data);
+                });
+
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>
+
+    </h1>
+    <form action="">
+        <p>
+            <input placeholder="Name" type="text" name="User-name">
+        </p>
+        <p>
+            <input placeholder="password" type="password" name="User-password">
+        </p>
+        <p>
+            <input placeholder="Age" type="number" name="age">
+        </p>
+        
+    </form>
+</body>
+</html>

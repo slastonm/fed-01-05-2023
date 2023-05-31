@@ -26,6 +26,7 @@ window.onload = function() {
     container.appendChild(createCircles(100, 20));
 
     let galery = [
+        {}
         '../img/image.png',
         'img/image.png'
     ]

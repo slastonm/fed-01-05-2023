@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let textarea = document.querySelector('textarea');
+            textarea.addEventListener('keydown',function(e){
+                console.log(e);
+                if(e.key == 's' && e.ctrlKey == true){
+                    e.preventDefault();
+                    alert('all data saved');
+                    console.log(textarea);
+                    textarea.value = 'Saved';
+                }
+                else if(e.key == 'a' && e.ctrlKey == true){
+                    alert('all data selected');
+                    textarea.value = 'Selected';
+                }
+                else{
+                    return
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <form action="">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </form>
+</body>
+</html>

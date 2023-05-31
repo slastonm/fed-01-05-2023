@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip{
+            width: 200px;
+            box-sizing: border-box;
+            padding: 20px;
+            height: 100px;
+            text-align: center;
+            background-color: red;
+            color:white;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            let removeBtn = document.querySelector('button');
+            function removeLastItem() {
+                let list = document.querySelector('ul');
+                let item = list.lastChild;
+                // let item = list.lastElementChild;
+                if(item != null) {
+                    list.removeChild(item);
+                }
+                else {
+                    alert('Sorry list is empty');
+                }
+            }
+            removeBtn.onclick = removeLastItem;
+
+            let showToltip = document.querySelector('.showToltip');
+            function showToltipFn(position='left-top') {
+                let tooltip = document.createElement('div');
+                tooltip.classList.add('tooltip');
+                tooltip.style.position = 'absolute';
+                tooltip.innerHTML = 'Information about ...';
+                if(position == 'right-top') {
+                    tooltip.style.right = '0px';
+                    tooltip.style.top = '0px';
+                }
+                else if(position == 'right-bottom'){
+                    tooltip.style.right = '0px';
+                    tooltip.style.bottom = '0px';
+                }
+                else if(position == 'center'){
+                    let windowWidth = window.innerWidth;
+                    let windowHeight = window.innerHeight;
+                    tooltip.style.left = `${windowWidth/2 -100}px`;
+                    tooltip.style.top = `${windowHeight/2 -50}px`;
+
+                }
+                else if(position == 'left-bottom'){
+                    tooltip.style.left = '0px';
+                    tooltip.style.bottom = '0px';
+                }
+                else{
+                    tooltip.style.left = '0px';
+                    tooltip.style.top = '0px';
+                }
+                document.body.appendChild(tooltip);
+            }
+            showToltip.onclick = () => {
+                // showToltipFn('center');
+                showToltipFn('right-top');
+
+            };
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button>
+        Remove last item
+    </button>
+    <button class="showToltip">
+        Show info
+    </button>
+</body>
+</html>
