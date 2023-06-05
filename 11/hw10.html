@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .thank-you{
+            display: none;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <img src="" alt="slide image">
+    <form action="">
+        <h1>
+            Choose pizza...
+        </h1>
+        <p>
+            Size
+        </p>
+        <p>
+            <input type="radio" name="size" id="small" value="50">
+            <label for="small">Small</label>
+            <input type="radio" name="size" id="middle" value="60">
+            <label for="middle">Middle</label>
+            <input type="radio" name="size" id="big" value="70">
+            <label for="big">Big</label>
+        </p>
+        <p>
+            <select name="pizza-model" id="pizza-model">
+                <option value="0" disabled selected>Зробіть вибір</option>
+                <option value="100">Сирна</option>
+                <option value="90">4 Мяса</option>
+                <option value="95">Короліська</option>
+                <option value="120">Фірмова</option>
+            </select>
+        </p>
+        <button type="submit">
+            Зaмовити
+        </button>
+    </form>
+    <h2 class="total-price"></h2>
+    <div class="thank-you">
+        Дякуємо за замовлення
+    </div>
+</body>
+</html>

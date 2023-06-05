@@ -1,0 +1,26 @@
+:root{
+    --my-color:red;
+    --font-size:10px;
+    --custom-bgcolor:black;
+    --before-color:#fff;
+}
+html, body{
+    font-size: var(--font-size);
+}
+#myEl,.myElements{
+    font-size: 3rem;
+    color: var(--my-color);
+}
+#myEl{
+    background-color: var(--custom-bgcolor);
+}
+#myEl::before{
+    content: "!!!!";
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--custom-bgcolor);
+    color: var(--before-color);
+}
+.myElements{
+    background-color: var(--custom-bgcolor);
+}

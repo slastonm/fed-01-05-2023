@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 0(62)777-77-77
+        // password456A!$
+        let regStr = /css/g;
+        let pattern = /\d\d\d/;
+        let hiRegex = new RegExp('css');
+        // let patternRegex = new RegExp('\d\d\d');
+
+        let text = "Стрінг css 12 css  ще щось 45 hi";
+        console.log(text.search(regStr));
+        console.log(text.search(pattern));
+        console.log(text.search(hiRegex));
+        console.log(text.replace(regStr,'js'));
+
+        console.log(text.match(pattern));
+        let operation = "5 плюс 4 дорівнює 9";
+        let res = operation.match(/\d/g);
+        console.log(res);
+
+        let dialog =`Are you Ok? Yes I'm OK ok`;
+        let okRes = dialog.match(/Ok/gi);
+        console.log(okRes);
+
+        console.log(dialog.replace(/ok/gi, 'fine'));
+
+        let code = 'Test-A123TestValue-B436TestValu-C111TestValue'
+        let splitCode = code.split(/\w\d\d\d/g);
+        console.log(splitCode);
+
+        console.log(pattern.test(text));
+        console.log(pattern.exec('test test'));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
