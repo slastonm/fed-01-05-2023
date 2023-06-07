@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let strTest = 'scssq';
+        let resC = /^c/.test(strTest);
+        let resSS = /ss$/.test(strTest);
+        console.log(`String test C letter ${resC}`);
+        console.log(`String test SS letters ${resSS}`);
+
+        let timer = "9:09"
+        let timer2 = "19:09"
+        let timeRegex = /^\d{1,2}:\d{2}$/
+        // let timeRegex = /^\d{1,2}:\d\d$/
+
+        console.log(timeRegex.test(timer2), 'timer2');
+        console.log(timeRegex.test(timer), 'timer1');
+
+        let beginStr = 'I know js is JS and javascript JS! finle name .js!';
+        console.log(beginStr.match(/\bjs\b/g));
+
+
+        let words = /[A-Za-z]ing/g;
+        let wordsString = 'Ring, tomat, orang, milk, king, ping';
+        console.log(wordsString.match(words));
+
+        let phoneNumber = '+38 (067) 333-22-111';
+        let phoneRegExp = /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+        console.log(phoneRegExp.test(phoneNumber));
+
+        let emailAddress = 'name_urname@gmail.com';
+        let emailRegExp = /^[a-z0-9._-]+@[a-z0-9.]+\.[a-z]{2,4}$/i;
+        console.log(emailRegExp.test(emailAddress), 'email address');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

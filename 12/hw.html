@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            function countNumber(val){
+                let pattern = /\d/g;
+                let res = val.match(pattern);
+                return res.length
+            }
+            console.log(countNumber('Hello1Wor ld2T ! $est123'));
+            console.log(countNumber('Hello1World'));
+
+            function replaceSpace(str){
+                let spacePatern = /\s/g;
+                let res = str.replace(spacePatern,'!');
+                return res;
+            }
+            console.log(replaceSpace('Hello World test test test'));
+            console.log(replaceSpace('Hello                                World'));
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

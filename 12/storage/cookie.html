@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            document.cookie = 'userName=Tomato';
+            let cookieName = 'Last  ! $  name';
+            let cookieValue = 'Tomato  2222';
+            document.cookie = `${encodeURIComponent(cookieName)}=${encodeURIComponent(cookieValue)}`;
+            // document.cookie = 'user=Den; path=/test; expires=Wed, 07 Jun 2023 19:22:36 GMT';
+            let date = new Date();
+            console.log(date.toUTCString());
+            document.cookie = 'user=Den; path=/test; expires=Wed, max-age=3600';
+
+            
+            console.log(document.cookie);
+            
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

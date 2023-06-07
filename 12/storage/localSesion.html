@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload =function(){
+            let output = document.querySelector('p');
+            let read = document.querySelector('.read');
+            let write = document.querySelector('.write');
+            let cout = 0;
+            read.onclick = function(){
+                output.innerHTML = `${sessionStorage.length} <br /> ${sessionStorage.getItem('mySession')} <br /> ${sessionStorage.keyTest} <br /> ${sessionStorage.keyStorage}`;
+                // console.log(window.localStorage.length);
+                // output.innerHTML =` ${window.localStorage.length} <br /> ${localStorage.getItem('buttonState')} ${localStorage.keyValue} <br /> ${localStorage['key3']}`;
+                // console.log(JSON.parse(localStorage.getItem('userDataStorage')));
+                // output.innerHTML =`${localStorage.getItem('userDataStorage')} `;
+            };
+
+            let userData = {
+                userName:'Tom',
+                age:24
+            }
+            write.onclick = function(){
+                sessionStorage.setItem('mySession', 'test');
+                sessionStorage.keyStorage = 'sessionStorage';
+                sessionStorage['keyTest'] = 'test';
+                localStorage.setItem('buttonState',true);
+                localStorage.keyValue = "Test value";
+                localStorage['key3']='Test value3';
+                localStorage.setItem('userDataStorage',JSON.stringify(userData))
+            };
+            localStorage.removeItem('buttonState');
+            localStorage.removeItem('key3');
+
+            // localStorage.clear();
+
+        };
+    </script>
+</head>
+<body>
+    <p>
+
+    </p>
+    <button class="read">
+        Read
+    </button>
+    <button class="write">
+        Write
+    </button>
+</body>
+</html>
