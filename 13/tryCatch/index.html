@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let dataArr = [];
+        try{
+            // console.log(checkValue());
+            if(dataArr.length == 0){
+                throw new SyntaxError('Empty array');
+            }
+        }
+        catch(error){
+            // alert(error);
+            // console.log(error);
+            // console.log(error.name);
+            console.log(error.message);
+            // console.log(error.stack);
+        }
+        finally{
+            alert('Check done');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
