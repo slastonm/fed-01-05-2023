@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let firstPromise = new Promise(function(resolve){
+            resolve('First');
+        });
+        let secondPromise = firstPromise.then(function(value){
+            return `${value} and second then`;
+        });
+        let thirdPromise = secondPromise.then(function(value){
+            return `${value} and third then`;
+        });
+        thirdPromise.then(function(finalValue){
+            console.log(finalValue);
+        });
+
+        new Promise(resolve => resolve('First'))
+        .then(value => (`${value} Second`)).then(value => (`${value} third`)).then(finalValue => {
+            console.log(finalValue);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

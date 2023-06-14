@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const xhr = new XMLHttpRequest();
+        let formData = {
+            title:'order',
+            body:'User pizza info',
+            userId: 111111
+        }
+
+        let jsonData = JSON.stringify(formData);
+
+        xhr.open('POST','https://jsonplaceholder.typicode.com/posts');
+        xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
+        xhr.setRequestHeader('Content-Value','test; charset=utf-8');
+        xhr.send(jsonData);
+        xhr.onload = function() {
+            let responseObject = xhr.response;
+            console.log(responseObject);
+        };
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

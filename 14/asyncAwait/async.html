@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let posts =[
+            {id:1, text:'Hello'},
+            {id:2, text:'World'}
+        ];
+        function getData(){
+            setTimeout(function(){
+                let dataItem = '';
+                posts.forEach((post)=>{
+                    dataItem += `<p>${post.text}</p>`
+                })
+                document.body.innerHTML = dataItem;
+            }, 1000)
+        }
+        function createPost(post) {
+            return new Promise(function(resolve, reject) {
+                setTimeout(()=>{
+                    posts.push(post);
+                    const error =  false;
+                    if(!error) {
+                        resolve();
+                    }
+                    else {
+                        reject('Error creating post');
+                    }
+                }, 4000);
+            })
+
+        }
+
+
+        // getData();
+        // createPost({id:3, text:'New post'}, getData);
+        // createPost({id:3, text:'New post'}).then(getData).catch(error => console.log(error));
+
+        async function start(){
+            await createPost({id:3, text:'New post'});
+            getData();
+        }
+        // start();
+
+        async function fetchData(){
+            const res = await fetch('https://jsonplaceholder.typicode.com/todos/2');
+            const data = await res.json();
+            console.log(data);
+        }
+        fetchData();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

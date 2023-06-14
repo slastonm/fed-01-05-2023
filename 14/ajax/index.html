@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const xhr = new XMLHttpRequest();
+        // Get get data
+        // Post create/update
+        // Put update data
+        // Path modify and get data
+        // delete remove data
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/2', true);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200){
+                let obj = xhr.response;
+                console.log(obj);
+            }
+        };
+        xhr.responseType = 'json';
+        xhr.send(null);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

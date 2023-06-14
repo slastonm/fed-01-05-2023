@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let firstPromise = new Promise(function(resolve, reject){
+            console.log('Promise working');
+        });
+        const x = 2; 
+        const y = 2;
+        let myPromise = new Promise(function(resolve, reject){
+            if(y == 0){
+                reject(alert('0 is bad value'));
+            }
+            else{
+                const res = x/y;
+                resolve(alert(res));
+            }
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
