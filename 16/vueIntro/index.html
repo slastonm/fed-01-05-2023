@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .user{
+            padding: 10px;
+        }
+        .admin{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vue</h1>
+    <div id="app">
+        {{productName}}
+        <p>
+            {{price}} - {{currency}}
+        </p>
+        <button v-on:click="order++">
+            Order TV
+        </button>
+        <button @click="order--">
+           remove Order TV
+        </button>
+        <button @click="orderFn">
+            Order fn
+        </button>
+        <div v-if="true">
+            Content
+        </div>
+        <div v-else>
+            Else Content
+        </div>
+        <span>
+            Your order is {{order}}
+        </span>
+        <hr>
+        <button @click="toggleMenu">
+            Toggle menu
+        </button>
+        <nav v-if="menuState">
+            <a href="#">Menu main</a>
+        </nav>
+        <hr>
+        <!-- <ul>
+            <li>
+                {{users[0].name}} {{users[0].age}}
+            </li>
+            <li>
+                {{users[1].name}} {{users[1].age}}
+            </li>
+        </ul> -->
+        <ul>
+            <li 
+            v-for="user in users" 
+            class="user"
+            :class="{admin:user.isAdmin}" >
+                {{user.name}} {{user.age}} 
+                <button @click="adminMode(user)">
+                    add admin rule {{user.isAdmin}}
+                </button>
+            </li>
+        </ul>
+        <h3>
+            Admins
+        </h3>
+        <ul>
+            <li v-for="user in justAdmin">
+                {{user.name}} {{user.age}} 
+            </li>
+        </ul>
+
+        <hr>
+        <h3>Atributes</h3>
+        <!-- <a href="link">JS</a>
+        <a href="{{link}}">JS</a> -->
+        <a v-bind:href="link">JS</a>
+        <a :href="link">JS</a>
+        <!-- <img :src="" alt="">
+        <img v-bind:src="" alt=""> -->
+
+        <!-- <div v-if="planets.lenght>0">
+            <div class="col3" v-for >
+
+            </div>
+        </div> -->
+
+    </div>
+    {{productName}}
+    <script src="component.js"></script>
+</body>
+</html>
